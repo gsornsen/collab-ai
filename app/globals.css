@@ -113,3 +113,33 @@ body,
 .page-transition-exit-active {
   opacity: 0;
 }
+
+.bn-shadcn .bn-editor {
+  background-color: unset;
+}
+
+.dark .bn-shadcn .bn-editor {
+  /* background-color: hsl(var(--background)); */
+  background-color: unset;
+  border-color: unset;
+}
+
+.dark .bn-container :is(.bn-bg-popover) {
+  background-color: hsl(0 0% 10% / 1.2); /* Adjust the alpha value as needed */
+}
+
+.dark .bn-border {
+  border-color: hsl(0 0% 8%);
+}
+
+.dark .bn-hovered-background {
+  background-color: unset;
+}
+
+.dark .bn-default-styles {
+  background-color: unset;
+}
+
+.dark .bn-default-styles {
+  background-color: unset;
+}
