@@ -50,6 +50,9 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        dark: {
+          background: "#1F1F1F",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -69,6 +72,9 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontSize: {
+        '2xs': '0.625rem', // 10px
       },
     },
   },

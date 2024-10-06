@@ -14,4 +14,14 @@ export default defineSchema({
   })
     .index("by_user", ["userId"])
     .index("by_user_parent", ["userId", "parentDocument"]),
+
+  settings: defineTable({
+    userId: v.string(),
+    appearance: v.object({
+      theme: v.string(),
+    }),
+    chatgptApiKey: v.string(),
+    claudeApiKey: v.string(),
+    model: v.optional(v.string()),
+  }).index("by_user", ["userId"]),
 });

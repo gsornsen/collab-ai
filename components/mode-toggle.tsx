@@ -11,9 +11,19 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useMutation } from "convex/react";
+import { api } from "@/convex/_generated/api";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
+  const updateSettings = useMutation(api.settings.updateSettings);
+
+  const onThemeChange = (theme: string) => {
+    setTheme(theme);
+    updateSettings({
+      appearance: { theme },
+    });
+  };
 
   return (
     <DropdownMenu>
@@ -25,13 +35,13 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem onClick={() => onThemeChange("light")}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem onClick={() => onThemeChange("dark")}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem onClick={() => onThemeChange("system")}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>

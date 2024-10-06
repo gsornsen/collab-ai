@@ -5,6 +5,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
 
 const Dialog = DialogPrimitive.Root;
 
@@ -59,7 +60,7 @@ const DialogHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-col space-y-1.5 text-center sm:text-left",
+      "flex flex-col space-y-1.5 text-center sm:text-left text-md font-semibold",
       className
     )}
     {...props}
@@ -108,6 +109,18 @@ const DialogDescription = React.forwardRef<
 ));
 DialogDescription.displayName = DialogPrimitive.Description.displayName;
 
+const DialogDivider = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <Separator
+    ref={ref}
+    className={cn("my-4", className)}
+    {...props}
+  />
+));
+DialogDivider.displayName = "DialogDivider";
+
 export {
   Dialog,
   DialogPortal,
@@ -119,4 +132,5 @@ export {
   DialogFooter,
   DialogTitle,
   DialogDescription,
+  DialogDivider,
 };

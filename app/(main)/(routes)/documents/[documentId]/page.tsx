@@ -52,11 +52,13 @@ const DocumentIdPage = ({ params }: DocumentIdPageProps) => {
   }
 
   return (
-    <div className="pb-40">
+    <div className="flex flex-col h-full">
       <Cover url={document.coverImage} />
-      <div className="md:max-w-3xl lg:max-w-4xl mx-auto">
+      <div className="flex-1 flex flex-col md:max-w-3xl lg:max-w-4xl mx-auto w-full">
         <Toolbar initialData={document} />
-        <Editor onChange={onChange} initialContent={document.content} />
+        <div className="flex-1 flex flex-col">
+          <Editor onChange={onChange} initialContent={document.content} />
+        </div>
       </div>
     </div>
   );
