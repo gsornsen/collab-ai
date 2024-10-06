@@ -26,7 +26,6 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
   };
 
   const editor: BlockNoteEditor = useBlockNote({
-    editable,
     initialContent: initialContent
       ? (JSON.parse(initialContent) as PartialBlock[])
       : undefined,
@@ -36,8 +35,9 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
   return (
     <div>
       <BlockNoteView
-        editor={editor as BlockNoteEditor}
+        editor={editor}
         theme={resolvedTheme === "dark" ? "dark" : "light"}
+        editable={editable}
         onChange={() => onChange(JSON.stringify(editor.topLevelBlocks, null, 2))}
       />
     </div>
