@@ -90,7 +90,7 @@ export const SettingsModal = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-full">
                 <DropdownMenuItem onClick={() => setModel("GPT-4o")}>GPT-4o</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setModel("Claude-Sonnet-3.5")}>Claude Sonnet 3.5</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setModel("Sonnet 3.5")}>Sonnet 3.5</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
