@@ -37,7 +37,7 @@
     "framer-motion": "^11.11.1",
     "langchain": "^0.3.2",
     "lucide-react": "^0.289.0",
-    "next": "13.5.6",
+    "next": "14.2.10",
     "next-themes": "^0.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
