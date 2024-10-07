@@ -90,3 +90,29 @@ export const updateSettings = mutation({
     return updatedSettings;
   },
 });
+
+export const getSettingsForAPI = query({
+  handler: async (ctx) => {
+    const identity = await ctx.auth.getUserIdentity();
+
+    if (!identity) {
+      throw new Error("Not authenticated");
+    }
+
+    const userId = identity.subject;
+
+    const settings = await ctx.db
+      .query("settings")
+      .withIndex("by_user", (q) => q.eq("userId", userId))
+      .first();
+
+    if (!settings) {
+      throw new Error("Settings not found");
+    }
+
+    return {
+      model: settings.model ?? "GPT-4o",
+      apiKey: settings.model === "GPT-4o" ? settings.chatgptApiKey : settings.claudeApiKey,
+    };
+  },
+});

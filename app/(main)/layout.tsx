@@ -5,6 +5,7 @@ import { Spinner } from "@/components/spinner";
 import { redirect } from "next/navigation";
 import Navigation from "./_components/navigation";
 import { SearchCommand } from "@/components/search-command";
+import { ChatCommand } from "@/components/chat-command";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -27,6 +28,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       <main className="flex-1 h-full overflow-y-auto">
         <SearchCommand />
         {children}
+        <ChatCommand />
       </main>
     </div>
   );

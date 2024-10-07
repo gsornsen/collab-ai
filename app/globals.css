@@ -119,13 +119,12 @@ body,
 }
 
 .dark .bn-shadcn .bn-editor {
-  /* background-color: hsl(var(--background)); */
   background-color: unset;
   border-color: unset;
 }
 
 .dark .bn-container :is(.bn-bg-popover) {
-  background-color: hsl(0 0% 10% / 1.2); /* Adjust the alpha value as needed */
+  background-color: hsl(0 0% 10%);
 }
 
 .dark .bn-border {
